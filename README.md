@@ -53,6 +53,6 @@
 2. `CREATE USER artik WITH password '123456';`
 3. `ALTER USER artik WITH SUPERUSER;`
 
-#### Create database in PostgreSQL
+##### Create database in PostgreSQL
 1. `sudo -u postgres psql`
 2. `CREATE DATABASE mydatabase;`
