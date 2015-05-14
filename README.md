@@ -7,10 +7,11 @@
 1. `sudo nano /etc/ssh/sshd_config`
 2. change `#useDNS yes` to `useDNS no`
 
-##### Create user artik
+##### Create superuser artik
+1.
+2. `sudo nano /etc/sudoers`
 
-
-##### Install python3.4 with pip3.4
+##### Install python3.4 with pip3.4 from sources
 1. `sudo yum install gcc openssl-devel pcre-devel zlib-devel`
 2. `wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tgz`
 3. `tar xzf Python-3.4.3.tgz` 
@@ -18,6 +19,10 @@
 5. `./configure`
 6. `make`
 7. `sudo make install`
+
+##### install python3.3 with pip3.3 from SCL
+1. `sudo yum install centos-release-SCL`
+2. `sudo yum install python33`
 
 ##### Install virtualenv
 `sudo /usr/local/bin/pip3.4 install virtualenv`
@@ -47,6 +52,14 @@
 3. `sudo service postgresql-9.4 initdb`
 4. `sudo service postgresql-9.4 start`
 5. `sudo chkconfig postgresql-9.4 on`
+
+##### Install PostgreSQL from SCL
+1. `sudo yum install centos-release-SCL`
+2. `yum install postgresql92`
+3. `sudo service postgresql-9.4 initdb`
+4. `sudo service postgresql-9.4 start`
+5. `sudo chkconfig postgresql-9.4 on`
+
 
 ##### Create superuser artik in PostgreSQL
 1. `sudo -u postgres psql`
