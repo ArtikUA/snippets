@@ -50,15 +50,15 @@
 1. `yum localinstall http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.4-1.noarch.rpm`
 2. `yum install postgresql94-server`
 3. `sudo service postgresql-9.4 initdb`
-4. `sudo service postgresql-9.4 start`
-5. `sudo chkconfig postgresql-9.4 on`
+4. `sudo chkconfig postgresql-9.4 on`
+5. `sudo service postgresql-9.4 start`
 
 ##### Install PostgreSQL from SCL
 1. `sudo yum install centos-release-SCL`
 2. `yum install postgresql92`
 3. `sudo service postgresql-9.4 initdb`
-4. `sudo service postgresql-9.4 start`
-5. `sudo chkconfig postgresql-9.4 on`
+4. `sudo chkconfig postgresql-9.4 on`
+5. `sudo service postgresql-9.4 start`
 
 
 ##### Create superuser artik in PostgreSQL
@@ -69,3 +69,9 @@
 ##### Create database in PostgreSQL
 1. `sudo -u postgres psql`
 2. `CREATE DATABASE mydatabase;`
+
+##### Install nginx
+1. `sudo yum install epel-release`
+2. `sudo yum install nginx`
+3. `sudo chkconfig nginx on`
+4. `sudo service nginx start`
