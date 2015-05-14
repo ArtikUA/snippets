@@ -1,3 +1,5 @@
+#CentOS
+
 ##### Activate eth0 and eth1
 
 
