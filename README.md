@@ -14,21 +14,27 @@
 2. `ifup eth1`
 
 ##### Network2
-1. VirtualBOX - settings - Network - Adapter 2 - Host-only Adapter
-2. 
+1. VirtualBOX - Network - Host-only Networks - add
+2. VirtualBOX - CentOS - settings - Network - Adapter 2 - Host-only Adapter
 
 ##### On boot eth0 and eth1
 1. `cd /etc/sysconfig/network-scripts`
 2. `sudo nano ifcfg-eth0`
 3. `ONBOOT=yes`
 4. `sudo nano ifcfg-eth1`
-5. `DEVICE=eth1`
+  DEVICE=eth1
+  BOOTPROTO=static
+  IPADDR=192.168.56.101
+  NETMAST=255.255.255.0
 
-`BOOTPROTO=static`
+##### Install SSH
+1. `yum -y install openssh-server openssh-clients`
+2. `chkconfig sshd on`
+3. `service sshd start`
 
-`IPADDR=192.168.56.101`
-
-`NETMAST=255.255.255.0`
+##### OFF firewall
+1. `sudo chkconfig iptables off`
+2. `sudo service iptables stop`
 
 
 ##### Install python3.4 with pip3.4 from sources
@@ -41,8 +47,10 @@
 7. `sudo make install`
 
 ##### install python3.3 with pip3.3 from SCL
-1. `sudo yum install centos-release-SCL`
-2. `sudo yum install python33`
+1. `sudo yum install -y centos-release-SCL`
+2. `sudo yum install -y python33`
+3. `export PATH="/opt/rh/python33/root/usr/bin:$PATH"`
+4. `easy_install pip`
 
 ##### Install virtualenv
 `sudo /usr/local/bin/pip3.4 install virtualenv`
@@ -60,22 +68,26 @@
 
 ##### Set autoupload files in PyCharm
 
+##### Install uwsgi
+1. sudo yum install -y gcc
+2. pip3.3 install uwsgi
+
 
 ##### Install psycopg2
-1. `sudo yum install postgresql-devel`
+1. `sudo yum install -y postgresql-devel`
 2. `sudo pip3.4 install psycopg2`
 
 
 ##### Install PostgreSQL
-1. `yum localinstall http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.4-1.noarch.rpm`
-2. `yum install postgresql94-server`
+1. `sudo yum localinstall http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.4-1.noarch.rpm`
+2. `sudo yum install -y postgresql94-server`
 3. `sudo service postgresql-9.4 initdb`
 4. `sudo chkconfig postgresql-9.4 on`
 5. `sudo service postgresql-9.4 start`
 
 ##### Install PostgreSQL from SCL
-1. `sudo yum install centos-release-SCL`
-2. `yum install postgresql92`
+1. `sudo yum install -y centos-release-SCL`
+2. `sudo yum install -y postgresql92`
 3. `sudo service postgresql-9.4 initdb`
 4. `sudo chkconfig postgresql-9.4 on`
 5. `sudo service postgresql-9.4 start`
@@ -91,7 +103,7 @@
 2. `CREATE DATABASE mydatabase;`
 
 ##### Install nginx
-1. `sudo yum install epel-release`
-2. `sudo yum install nginx`
+1. `sudo yum install -y epel-release`
+2. `sudo yum install -y nginx`
 3. `sudo chkconfig nginx on`
 4. `sudo service nginx start`
