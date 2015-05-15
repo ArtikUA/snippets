@@ -1,16 +1,31 @@
 #CentOS
 
-##### Activate eth0 and eth1
-
 
 ##### Remove wait when login
 1. `sudo nano /etc/ssh/sshd_config`
 2. change `#useDNS yes` to `useDNS no`
 
 ##### Create superuser artik
-1.
-2. `sudo nano /etc/sudoers`
+1. `useradd -ou 0 -g 0 artik`
+2. `passwd artik`
 
+##### Activate eth0 and eth1
+1. `ifup eth0`
+2. `ifup eth1`
+
+##### Network2
+1. VirtualBOX - settings - Network - Adapter 2 - Host-only Adapter
+2. 
+
+##### On boot eth0 and eth1
+1. `cd /etc/sysconfig/network-scripts`
+2. `sudo nano ifcfg-eth0`
+3. `ONBOOT=yes`
+4. `sudo nano ifcfg-eth1`
+5. `DEVICE=eth1
+BOOTPROTO=static
+IPADDR=192.168.56.101
+NETMAST=255.255.255.0`
 ##### Install python3.4 with pip3.4 from sources
 1. `sudo yum install gcc openssl-devel pcre-devel zlib-devel`
 2. `wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tgz`
