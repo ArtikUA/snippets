@@ -6,8 +6,11 @@
 2. change `#useDNS yes` to `useDNS no`
 
 ##### Create superuser artik
-1. `useradd -ou 0 -g 0 artik`
+1. `useradd artik`
 2. `passwd artik`
+3. `sudo nano /etc/sudoers`
+4. `artik ALL=(ALL)	ALL`
+5. 
 
 ##### Activate eth0 and eth1
 1. `ifup eth0`
@@ -32,25 +35,21 @@
 2. `chkconfig sshd on`
 3. `service sshd start`
 
+##### Install Screen and Nano
+1. `yum -y install screen nano`
+
+
 ##### OFF firewall
 1. `sudo chkconfig iptables off`
 2. `sudo service iptables stop`
 
 
-##### Install python3.4 with pip3.4 from sources
-1. `sudo yum install gcc openssl-devel pcre-devel zlib-devel`
-2. `wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tgz`
-3. `tar xzf Python-3.4.3.tgz` 
-4. `cd Python-3.4.3`
-5. `./configure`
-6. `make`
-7. `sudo make install`
-
 ##### install python3.3 with pip3.3 from SCL
 1. `sudo yum install -y centos-release-SCL`
 2. `sudo yum install -y python33`
-3. `export PATH="/opt/rh/python33/root/usr/bin:$PATH"`
-4. `easy_install pip`
+3. `scl enable python33 bash`
+4. `export PATH="/opt/rh/python33/root/usr/bin:$PATH"`
+5. `easy_install pip`
 
 ##### Install virtualenv
 `sudo /usr/local/bin/pip3.4 install virtualenv`
@@ -77,13 +76,6 @@
 1. `sudo yum install -y postgresql-devel`
 2. `sudo pip3.4 install psycopg2`
 
-
-##### Install PostgreSQL
-1. `sudo yum localinstall http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.4-1.noarch.rpm`
-2. `sudo yum install -y postgresql94-server`
-3. `sudo service postgresql-9.4 initdb`
-4. `sudo chkconfig postgresql-9.4 on`
-5. `sudo service postgresql-9.4 start`
 
 ##### Install PostgreSQL from SCL
 1. `sudo yum install -y centos-release-SCL`
