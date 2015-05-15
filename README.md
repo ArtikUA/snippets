@@ -22,10 +22,15 @@
 2. `sudo nano ifcfg-eth0`
 3. `ONBOOT=yes`
 4. `sudo nano ifcfg-eth1`
-5. `DEVICE=eth1
-BOOTPROTO=static
-IPADDR=192.168.56.101
-NETMAST=255.255.255.0`
+5. `DEVICE=eth1`
+
+`BOOTPROTO=static`
+
+`IPADDR=192.168.56.101`
+
+`NETMAST=255.255.255.0`
+
+
 ##### Install python3.4 with pip3.4 from sources
 1. `sudo yum install gcc openssl-devel pcre-devel zlib-devel`
 2. `wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tgz`
