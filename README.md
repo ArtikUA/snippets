@@ -22,10 +22,10 @@
 2. `sudo nano ifcfg-eth0`
 3. `ONBOOT=yes`
 4. `sudo nano ifcfg-eth1`
-  DEVICE=eth1
-  BOOTPROTO=static
-  IPADDR=192.168.56.101
-  NETMAST=255.255.255.0
+DEVICE=eth1
+BOOTPROTO=static
+IPADDR=192.168.56.101
+NETMAST=255.255.255.0
 
 ##### Install SSH
 1. `yum -y install openssh-server openssh-clients`
