@@ -47,6 +47,7 @@
 ##### install python3.3 with pip3.3 from SCL
 1. `sudo yum install -y centos-release-SCL`
 2. `sudo yum install -y python33`
+3.  ? `yum install scl-utils`
 3. `scl enable python33 bash`
 4. `export PATH="/opt/rh/python33/root/usr/bin:$PATH"`
 5. `easy_install pip`
@@ -68,8 +69,9 @@
 ##### Set autoupload files in PyCharm
 
 ##### Install uwsgi
-1. sudo yum install -y gcc
-2. pip3.3 install uwsgi
+1. `sudo yum install -y gcc`
+2. `pip3.3 install uwsgi`
+3. `uwsgi --http :8001 --module woohoo.wsgi`
 
 
 ##### Install psycopg2
