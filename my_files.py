@@ -12,4 +12,4 @@ f5 = open('1.txt', 'r')
 for line in f5:
     print(line + ' END')
 
-print()
+print('ololo')
