@@ -6,6 +6,8 @@ f2.write(f3.read())
 f4 = open('1.txt', 'a')
 f4.write('aaaaa\n')
 
+print(1)
+
 f5 = open('1.txt', 'r')
 for line in f5:
     print(line + ' END')
