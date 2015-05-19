@@ -47,9 +47,10 @@
 ##### install python3.3 with pip3.3 from SCL
 1. `sudo yum install -y centos-release-SCL`
 2. `sudo yum install -y python33`
-3.  ? `yum install scl-utils`
-3. `scl enable python33 bash`
-4. `export PATH="/opt/rh/python33/root/usr/bin:$PATH"`
+3. `sudo nano .bash_profile` > `. /opt/rh/python27/enable``
+3. - `yum install scl-utils`
+3. - `scl enable python33 bash`
+4. - `export PATH="/opt/rh/python33/root/usr/bin:$PATH"`
 5. `easy_install pip`
 
 ##### Install virtualenv
