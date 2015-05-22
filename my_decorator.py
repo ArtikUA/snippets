@@ -9,3 +9,15 @@ def zzz():
 
 
 print(zzz())
+print()
+
+
+def decorator2(ololo):
+    return lambda: ololo() * 2
+
+@decorator2
+def yyy():
+    return 5
+
+print(yyy())
+print()
