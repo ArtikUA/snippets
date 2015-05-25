@@ -2,12 +2,14 @@ from multiprocessing import Process, Lock
 
 
 def f(l, i):
-    l.acquire()
+
     try:
         for z in range(1000000):
+            #l.acquire()
             print('hello world', i)
+            #l.release()
     finally:
-        l.release()
+        pass
 
 
 if __name__ == '__main__':
