@@ -114,9 +114,15 @@ for vendor in airplanes_dict:
 
 ##################################
 a_dict = {'a': 1, 'b': 2, 'c': 3}
-print({value:{key, key + key} for key, value in a_dict.items()})
+print({value: {key, key + key} for key, value in a_dict.items()})
+print()
 # {1: 'a', 2: 'b', 3: 'c'}
 
 
 #######
 
+
+a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print([v[-2:] for v in a[-2:]])
+print()
+# [[5, 6], [8, 9]]

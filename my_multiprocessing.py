@@ -1,19 +1,21 @@
 from multiprocessing import Process, Lock
+from django.contrib.gis.utils.wkt import precision_wkt
 
 
 def f(l, i):
-
-    try:
-        for z in range(1000000):
-            #l.acquire()
-            print('hello world', i)
-            #l.release()
-    finally:
-        pass
+    # l.acquire()
+    i = 0
+    for z in range(10000000):
+        i -= 1
+    print("OK")
+    #finally:
+    #    pass
+        #l.release()
 
 
 if __name__ == '__main__':
     lock = Lock()
 
     for num in range(10):
-        Process(target=f, args=(lock, num)).start()
+        process = Process(target=f, args=(lock, num)).start()
+        print(process)
