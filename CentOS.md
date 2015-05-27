@@ -102,3 +102,10 @@
 2. `sudo yum install -y nginx`
 3. `sudo chkconfig nginx on`
 4. `sudo service nginx start`
+
+##### Install Redis
+1. `sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm`
+2. `sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm`
+3. `sudo yum --enablerepo=remi install redis`
+4. `sudo chkconfig redis on`
+5. `sudo service redis restart`
