@@ -126,3 +126,19 @@ a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print([v[-2:] for v in a[-2:]])
 print()
 # [[5, 6], [8, 9]]
+
+
+vec1 = [2, 4, 6]
+vec2 = [4, 3, -9]
+print([x * y for x in vec1 for y in vec2])
+print()
+
+buff = []
+for x in vec1:
+    for y in vec2:
+        buff.append(x*y)
+print(buff)
+print()
+
+
+

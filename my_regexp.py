@@ -47,3 +47,21 @@ print(re.sub("a", "b", "aaasdasdgaawergageaweg"))
 print()
 # bbbsdbsdgbbwergbgebweg
 
+
+rx_sequence = re.compile('''1111111
+<b>123
+(.*?)
+567</b>
+1111111''', re.MULTILINE)
+
+text = '''
+1111111
+<b>123
+345
+567</b>
+1111111
+'''
+
+for match in rx_sequence.finditer(text):
+    print(match.groups())
+

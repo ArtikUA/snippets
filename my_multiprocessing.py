@@ -2,12 +2,13 @@ from multiprocessing import Process, Lock
 from django.contrib.gis.utils.wkt import precision_wkt
 
 
-def f(l, i):
+def f(l, n):
     # l.acquire()
     i = 0
     for z in range(10000000):
         i -= 1
-    print("OK")
+        print("{}\tgo".format(n))
+    print("{i} OK")
     #finally:
     #    pass
         #l.release()
